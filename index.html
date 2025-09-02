@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜딩 페이지</title>
+    <style>
+        /* 기본 스타일 초기화 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* 이미지 로딩 전 배경색 */
+        }
+
+        /* 본문 스타일: 하단 고정 배너에 의해 마지막 이미지가 가려지지 않도록 패딩 추가 */
+        body {
+            padding-bottom: 80px; 
+        }
+
+        /* 이미지 스타일: 화면 너비에 꽉 차게 설정 */
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        /* --- 고정 하단 배너 (카카오톡) --- */
+        .footer-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #a32035; /* 고정 색상 */
+            z-index: 100;
+            animation: heartbeat 1.5s ease-in-out infinite; /* 심장박동 애니메이션 */
+        }
+
+        .footer-banner a {
+            display: block;
+            padding: 20px 10px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* 배너 애니메이션 정의 */
+        @keyframes heartbeat {
+            0% { 
+                transform: scale(1); 
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            }
+            100% { 
+                transform: scale(1); 
+            }
+        }
+
+        /* --- 우측 플로팅 배너 (유튜브) --- */
+        .side-banner {
+            position: fixed;
+            right: 15px; /* 오른쪽에서 15px 띄움 */
+            z-index: 101; /* 하단 배너보다 위에 오도록 설정 */
+            background-color: rgba(0, 0, 0, 0.7); /* 반투명 검정 배경 */
+            border-radius: 10px;
+            margin-bottom: 10px;
+            /* ✨ 수정된 부분: 그림자 효과 추가 */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* 떠있는 느낌을 주는 그림자 */
+            transition: transform 0.2s ease-in-out;
+            /* ✨ 추가된 부분: 빛나는 테두리 애니메이션 적용 */
+            animation: glowing-border 2s ease-in-out infinite;
+        }
+        
+        /* ✨ 추가된 부분: 빛나는 테두리 애니메이션 정의 */
+        @keyframes glowing-border {
+            0% {
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.4);
+            }
+            50% {
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.8);
+            }
+            100% {
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        .side-banner:hover {
+            transform: scale(1.05); /* 마우스 올리면 살짝 커지는 효과 */
+        }
+        
+        .side-banner a {
+            display: block;
+            padding: 12px 18px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* 각 배너의 세로 위치 지정 (하단 배너 위로) */
+        .banner-50s {
+            bottom: 90px; /* 하단 배너 바로 위 */
+        }
+
+        .banner-60s {
+            bottom: 155px; /* 50대 배너 위 */
+        }
+
+    </style>
+</head>
+<body>
+
+    <img src="001.jpg" alt="Project Image 1">
+    <img src="002.jpg" alt="Project Image 2">
+    <img src="003.jpg" alt="Project Image 3">
+    <img src="004.jpg" alt="Project Image 4">
+    <img src="005.jpg" alt="Project Image 5">
+    <img src="006.jpg" alt="Project Image 6">
+    <img src="007.jpg" alt="Project Image 7">
+    <img src="008.jpg" alt="Project Image 8">
+    <img src="009.jpg" alt="Project Image 9">
+    <img src="010.jpg" alt="Project Image 10">
+
+    <div class="footer-banner">
+        <a href="http://pf.ao.com/_eTyqn/chat" target="_blank" rel="noopener noreferrer">
+            카카오톡 상담바로가기
+        </a>
+    </div>
+
+    <div class="side-banner banner-50s">
+        <a href="https://youtube.com/shorts/nRvXXsu4vHU" target="_blank" rel="noopener noreferrer">
+            50대 비포애프터 영상 바로가기
+        </a>
+    </div>
+    <div class="side-banner banner-60s">
+        <a href="https://youtube.com/shorts/Kdb68wlaX40" target="_blank" rel="noopener noreferrer">
+            60대 비포애프터 영상 바로가기
+        </a>
+    </div>
+
+</body>
+</html>
